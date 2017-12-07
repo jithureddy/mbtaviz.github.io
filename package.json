@@ -1,0 +1,26 @@
+{
+    "name": "insights-heat-map",
+    "version": "0.0.1",
+    "description": "This app shows the insights of data in heat map",
+    "main": "index.js",
+    "scripts": {
+      "start": "node index.js"
+    },
+    "dependencies": {
+      "express": "^4.13.3"
+    },
+    "engines": {
+      "node": "4.0.0"
+    },
+    "repository": {
+      "type": "git"
+    },
+    "keywords": [
+      "node",
+      "heroku",
+      "express"
+    ],
+    "author": "Jithender",
+    "contributors": [],
+    "license": ""
+  }

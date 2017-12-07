@@ -23,27 +23,27 @@
   }
 
   // utilities for getting page width/height
-  var pageWidth = ios ? function() {
+  var pageWidth = ios ? function () {
     return document.body.clientWidth;
-  } : function() {
+  } : function () {
     return window.innerWidth || document.documentElement.clientWidth;
   };
-  var pageHeight = ios ? function() {
+  var pageHeight = ios ? function () {
     var screenWidth,
-        screenHeight;
+      screenHeight;
     switch (window.orientation || 0) {
-    case 90:
-    case -90:
-      screenWidth = screen.height;
-      screenHeight = screen.availWidth;
-      break;
-    default:
-      screenWidth = screen.width;
-      screenHeight = screen.availHeight;
-      break;
+      case 90:
+      case -90:
+        screenWidth = screen.height;
+        screenHeight = screen.availWidth;
+        break;
+      default:
+        screenWidth = screen.width;
+        screenHeight = screen.availHeight;
+        break;
     }
     return screenHeight / screenWidth * document.body.clientWidth;
-  } : function() {
+  } : function () {
     return window.innerHeight || document.documentElement.clientHeight;
   };
 
@@ -63,14 +63,14 @@
   }
 
   d3.select(window)
-      .on("resize.watch", resized)
-      .on("load.watch", resized)
-      .on("orientationchange.watch", resized)
-      .call(resized);
+    .on("resize.watch", resized)
+    .on("load.watch", resized)
+    .on("orientationchange.watch", resized)
+    .call(resized);
 
   // hide d3-tip on scroll
   d3.select(window)
-      .on("scroll.d3-tip-hide", function () { d3.selectAll('.d3-tip').style('top', '-50px'); });
+    .on("scroll.d3-tip-hide", function () { d3.selectAll('.d3-tip').style('top', '-50px'); });
 
   // add "appendOnce" method to d3 selections which can be called many times but ensures that
   // the dom element is only added once.  It always returns the dom element, and adds a "firstTime"
@@ -126,17 +126,17 @@
   // wrap(text, 200)
   // adapted from: http://bl.ocks.org/mbostock/7555321
   function wrap(text, width) {
-    text.each(function() {
+    text.each(function () {
       var text = d3.select(this),
-          words = text.text().split(/\s+/).reverse(),
-          word,
-          line = [],
-          lineNumber = 0,
-          lineHeight = 1.1, // ems
-          y = text.attr("y") || 0,
-          x = text.attr("x") || 0,
-          dy = parseFloat(text.attr("dy") || 0),
-          tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
+        words = text.text().split(/\s+/).reverse(),
+        word,
+        line = [],
+        lineNumber = 0,
+        lineHeight = 1.1, // ems
+        y = text.attr("y") || 0,
+        x = text.attr("x") || 0,
+        dy = parseFloat(text.attr("dy") || 0),
+        tspan = text.text(null).append("tspan").attr("x", x).attr("y", y).attr("dy", dy + "em");
       while (!!(word = words.pop())) {
         line.push(word);
         tspan.text(line.join(" "));
@@ -161,24 +161,24 @@
       .attr('height', 0)
       .appendOnce("defs", 'defs')
       .appendOnce('linearGradient', name).firstTime
-        .attr("id", name)
-        .attr("x1", "0%")
-        .attr("y1", "0%")
-        .attr("x2", "100%")
-        .attr("y2", "0%")
-        .attr("spreadMethod", "pad");
+      .attr("id", name)
+      .attr("x1", "0%")
+      .attr("y1", "0%")
+      .attr("x2", "100%")
+      .attr("y2", "0%")
+      .attr("spreadMethod", "pad");
 
     var valueToPercentScale = d3.scale.linear()
-        .domain(d3.extent(scale.domain()))
-        .range(["0%", "100%"]);
+      .domain(d3.extent(scale.domain()))
+      .range(["0%", "100%"]);
 
     gradient.selectAll('stop')
-        .data(scale.domain())
-        .enter()
+      .data(scale.domain())
+      .enter()
       .append("svg:stop")
-        .attr("offset", valueToPercentScale)
-        .attr("stop-color", scale)
-        .attr("stop-opacity", 1);
+      .attr("offset", valueToPercentScale)
+      .attr("stop-color", scale)
+      .attr("stop-opacity", 1);
   }
 
   // Utility for creating a clip path
@@ -190,7 +190,7 @@
       .appendOnce('svg', 'svgdefs')
       .appendOnce('defs', 'defs')
       .appendOnce('clipPath', 'clip-' + name)
-        .attr('id', name)
+      .attr('id', name)
       .appendOnce('rect', 'rect-' + name);
   }
 
@@ -227,7 +227,7 @@
     e.preventDefault();
     doAnchorScroll();
     if (getHashData()) {
-      $(window).trigger('hashdatachange', {data: getHashData()});
+      $(window).trigger('hashdatachange', { data: getHashData() });
     }
     return false;
   });
@@ -289,6 +289,8 @@
     return time;
   }
 
+  
+
   // Create the global object that all shared data goes on
   window.VIZ = {
     ios: ios,
@@ -305,6 +307,6 @@
     BREAK_SM: 768,
     BREAK_MD: 992,
     BREAK_LG: 1200,
-    noop: function () {}
+    noop: function () { }
   };
 }());
