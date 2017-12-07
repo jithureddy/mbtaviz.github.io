@@ -1,31 +1,6 @@
 Visualizing MBTA Data
 =====================
 
-[![mbtaviz.github.io](http://mbtaviz.github.io/media/wide-preview-collage.png)](http://mbtaviz.github.io/)
-
-Visualizing MBTA Data is a web based interactive visualization that
-provides a glimpse into the performance and behavior of Boston's subway
-system.
-
-Check it out: <http://mbtaviz.github.io>.
-
-See our [blog post](http://mbtaviz.wordpress.com/2014/07/25/website-source-announcement) describing this source code, and
-[wiki pages](https://github.com/mbtaviz/mbtaviz.github.io/wiki) with detailed
-explanations of the data format for each visualization.  We have also given several talks on this project. Here are
-the handouts from each:
-
-- [MetroWest Data Visualization Meetup - June 12, 2014](http://mbtaviz.github.io/handout.pdf)
-  goes into detail on visualization design and implementation details.
-- [Boston Data Visualization Meetup at MIT Media Lab - August 13, 2014](http://mbtaviz.github.io/medialab-handout.pdf)
-  goes into more depth on design and implementation.
-- [Boston Data-Con - September 13, 2014](http://mbtaviz.github.io/datacon-handout.pdf)
-  goes into even more depth on design and implementation details.
-- [NEASIST Data Visualization Workshop - January 15, 2015](http://mbtaviz.github.io/neasist-handout.pdf)
-  serves as a reference sheet to all of the free and open source tools used in the making of this project.
-  [Slides](http://mbtaviz.github.io/neasist-slides.pdf) from this talk are also available. See our
-  [blog post](https://mbtaviz.wordpress.com/2015/01/26/new-video-how-we-built-mbtaviz/) for more details and a video
-  of the talk put together by the WGBH Forum Network.
-
 ## Quick Start
 
 1. Install [node.js](http://nodejs.org/)
@@ -48,6 +23,16 @@ the handouts from each:
 
 6. Browse to [http://localhost:8080/](http://localhost:8080/) to see the 
 visualization
+or 
+
+1. Install dependencies
+
+  `npm install`
+  `bower install`
+ 
+2. Start server
+ 
+    `npm start`
 
 ## Source Code Layout
 
