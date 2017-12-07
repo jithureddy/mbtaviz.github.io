@@ -23,12 +23,13 @@ Visualizing MBTA Data
 
 6. Browse to [http://localhost:8080/](http://localhost:8080/) to see the 
 visualization
-or 
 
+##  Or 
+========================================
 1. Install dependencies
 
-  `npm install`
-  `bower install`
+     `npm install`
+     `bower install`
  
 2. Start server
  
